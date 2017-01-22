@@ -1,0 +1,26 @@
+db:
+  image: mysql
+  ports: 
+   - "3306:3306"
+  volumes: 
+   - ./db:/var/lib/mysql
+   - ./config/mysql/app.sql:/docker-entrypoint-initdb.d/app.sql
+  environment: # 由于环境变量创建数据库指定不了编码,就采用sql方式
+#    - MYSQL_DATABASE=pamcmonitor
+   - MYSQL_ROOT_PASSWORD=asheashe # 根据实际设置自己数据库的密码(这里是英雄联盟的艾希,O(∩_∩)O哈哈~)
+
+web:
+  build:
+   - context: .
+   - dockerfile: Dockerfile.prod # https://docs.docker.com/compose/compose-file/
+  environment:
+   - USER_SETTINGS=prod
+   - DB_NAME=lol
+   - DB_PASSWORD=asheashe
+  volumes: 
+   - ./src:/docker/src/
+  ports: 
+   - "80:80"
+  links: 
+   - db
+  command: bash -c "python /src/updatedb.py &&  supervisord -n"
