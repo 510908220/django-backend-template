@@ -37,7 +37,7 @@ COPY ./src/  /docker/src/
 
 # COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
 # to prevent re-installinig (all your) dependencies when you made a change a line or two in your app.
-RUN pip install -r /docker/src/config/pip/requirements.dev
+RUN pip install -r /docker/src/requirements/dev.txt
 
 RUN export TERM=xterm # 会出现错误TERM environment variable not set
 
