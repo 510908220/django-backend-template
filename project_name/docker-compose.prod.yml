@@ -23,4 +23,4 @@ web:
    - "80:80"
   links: 
    - db
-  command: bash -c "python /src/updatedb.py &&  supervisord -n"
+  command: bash -c "python /docker/src/updatedb.py &&  supervisord -n"

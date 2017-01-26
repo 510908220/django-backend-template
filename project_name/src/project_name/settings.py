@@ -109,7 +109,8 @@ STATIC_URL = '/static/'
 env = os.environ['USER_SETTINGS'] # 在docker-compose里设置
 package,_ = __name__.split(".")
 user_settings_module = ".".join([package, env + "_settings"])
-user_settings = __import__(user_settings_module)
+# http://stackoverflow.com/questions/8593475/dynamically-import-submodules-in-python
+user_settings = __import__(user_settings_module, fromlist='.')
 for attr in dir(user_settings):
     if not attr.startswith('_'):
         globals()[attr] = getattr(user_settings, attr)
