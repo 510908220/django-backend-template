@@ -104,7 +104,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT  = os.path.join(BASE_DIR,"static_root")
 ## load user define settings
 env = os.environ['USER_SETTINGS'] # 在docker-compose里设置
 package,_ = __name__.split(".")

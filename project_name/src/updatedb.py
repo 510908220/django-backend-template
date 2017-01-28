@@ -23,25 +23,26 @@ def wait_db_ok():
         test_db()
         return True
     except:
-        print "test db error:",traceback.format_exc()
+        print ("test db error:",traceback.format_exc())
         return False
 def update_supervisor_cfg():
-    print subprocess.check_output("python generate_supervisor_conf.py", shell=True)
+    print (subprocess.check_output("python generate_supervisor_conf.py", shell=True))
 
 def update_db():
     cmds = [
         "python manage.py makemigrations",
         "python manage.py migrate",
+        "python manage.py collectstatic  --noinput"
     ]
 
     for cmd in cmds:
         out = subprocess.check_output(cmd, shell=True)
-        print out
+        print (out)
 
 def main():
     while not wait_db_ok():
         time.sleep(5)
-        print "db is not ok, wait ...."
+        print ("db is not ok, wait ....")
     old_dir = os.getcwd()
     os.chdir(ROOT_DIR)
     update_supervisor_cfg()
