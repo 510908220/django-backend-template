@@ -25,8 +25,6 @@ SECRET_KEY = 'o+#(6o=4es2^4u2vh#!mt*i&x20gfp2gn*^lq_%z=7via=tdf2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = '{{project_name}}.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
 TEMPLATES = [
     {
@@ -64,7 +62,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '{{project_name}}.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 
 # Password validation
