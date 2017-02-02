@@ -29,7 +29,7 @@ user=root
 
 UWSGI_TEMPLATE = """
 [program:app-uwsgi]
-command = /usr/local/bin/uwsgi --ini /docker/src/uwsgi.ini
+command = /usr/local/bin/uwsgi --ini /docker/src/uwsgi.py
 stopsignal=QUIT
 redirect_stderr=true
 stderr_logfile_maxbytes=1MB

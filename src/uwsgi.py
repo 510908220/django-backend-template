@@ -11,4 +11,4 @@ listen=128
 buffer-size=30000
 memory-report=true
 chdir=/docker/src
-module=config.wsgi:application
+module={{ project_name }}.wsgi:application

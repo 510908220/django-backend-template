@@ -1,7 +1,6 @@
 web:
-  build:
-   - context: .
-   - dockerfile: Dockerfile.prod # https://docs.docker.com/compose/compose-file/
+  build: .
+  dockerfile: Dockerfile.prod # https://docs.docker.com/compose/compose-file/
   environment:
    - USER_SETTINGS=prod
    - DB_NAME=lol
