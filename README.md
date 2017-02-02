@@ -12,7 +12,7 @@
 
 #### 创建项目
 ```
-django-admin startproject --template=https://github.com/510908220/django-backend-template/archive/2.0.tar.gz project_name
+django-admin startproject --template=https://github.com/510908220/django-backend-template/archive/3.0.tar.gz project_name
 ```
 
 #### 设置数据库容器
