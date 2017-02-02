@@ -12,7 +12,7 @@
 
 #### 创建项目
 ```
-django-admin startproject --template=https://github.com/510908220/django-backend-template/archive/1.0.tar.gz project_name
+django-admin startproject --template=https://github.com/510908220/django-backend-template/archive/2.0.tar.gz project_name
 ```
 
 #### 设置数据库容器
@@ -24,6 +24,7 @@ docker run --name db -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=ash
 - 在`docker-compose.yml`目录下执行:`docker-compose up -d`
 我的`docker`是装在`virtualbox`下的. `192.168.56.101`是虚拟机里系统的ip. 访问`http://192.168.56.101/api/`可以看到如下界面:
 ![](rootview.png)
+
 #### 线上部署
 
 - 创建数据库:`/config/mysql/app.sql`
