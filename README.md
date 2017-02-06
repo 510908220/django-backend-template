@@ -22,11 +22,13 @@ docker run --name db -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=ash
 #### 开发模式
 - 创建数据库:`/config/mysql/app.sql`
 - 在`docker-compose.yml`目录下执行:`docker-compose up -d`
+- 创建用户:`docker-compose run --rm web python manage.py createsuperuser`
 
 #### 线上部署
 
 - 创建数据库:`/config/mysql/app.sql`
 - 在`docker-compose.prod.yml`目录下执行:`docker-compose -f docker-compose.prod.yml up -d`
+- 创建用户:`docker-compose run --rm web python manage.py createsuperuser`
 
 ## 展示
 
